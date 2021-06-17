@@ -43,4 +43,28 @@ public class VectorPelicula{
 		System.out.println("\n\n");
 	}
 
+//Ordenamiento
+    public void ordenarPorNombreP(boolean ascendente){
+        boolean cambio = true;
+
+        for (int i = 1; i < (siguientePelicula-1); i++) {
+            for (int j = 0; j < (siguientePelicula-1-i); j++) {
+                //  String.compareTo(String)
+                //   [-oo , + oo]
+                if (ascendente)
+                    cambio= (pelicula[j].getNombre().compareTo(pelicula[j+1].getNombre()) > 0 );
+                else 
+                    cambio= (pelicula[j].getNombre().compareTo(pelicula[j+1].getNombre()) < 0 );
+
+                if(cambio ){
+                    //clientes i va antes que clientes j <0 descendente
+                    Pelicula aux = pelicula[j];
+                    pelicula[j] = pelicula[j+1];
+                    pelicula[j+1]= aux;
+                }
+            }
+        }
+
+    }
+
 }

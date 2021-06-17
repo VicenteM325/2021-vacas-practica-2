@@ -24,6 +24,8 @@ public class Principal {
             System.out.println("4) Ordenar Clientes Descendente");
             System.out.println("5) Ingreso de peliculas");
             System.out.println("6) Mostrar peliculas");
+            System.out.println("7) Mostrar peliculas ordenadas");
+
             System.out.println("-1) Salir");
             System.out.println("\n");
             menu = IngresoDatos.getEntero("Ingrese la opción ", true);
@@ -63,6 +65,14 @@ public class Principal {
                 tablaPeliculas.mostrarPeliculas();
 
 
+            }
+
+            if (menu == 7){
+                System.out.println("Desordenado:");
+                tablaPeliculas.mostrarPeliculas();
+                System.out.println("\n\nOrdenado:");
+                tablaPeliculas.ordenarPorNombreP(true);
+                tablaPeliculas.mostrarPeliculas();
             }
 
         }
